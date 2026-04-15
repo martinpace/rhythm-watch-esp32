@@ -63,9 +63,9 @@ The PlatformIO icons are located in the bottom status bar of your editor or in t
 
 ## 4. Diagnostic Monitoring
 Once the app is uploaded, you must open the Serial Monitor to see debug data:
-### Click the **Plug** icon in the bottom status bar.
-### Set the baud rate to `115200` (this is usually handled automatically by `platformio.ini`).
-### If the terminal is blank, **press the Reset button** on the device to restart the application loop.
+    1. Click the **Plug** icon in the bottom status bar.
+    2. Set the baud rate to `115200` (this is usually handled automatically by `platformio.ini`).
+    3. If the terminal is blank, **press the Reset button** on the device to restart the application loop.
 
 ## 🔍 Troubleshooting the Windows Connection
 * **Device not found:** Try a different USB port. On desktops, use the ports directly on the motherboard (rear) rather than front-panel ports for more stable power.
