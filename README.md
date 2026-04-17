@@ -2,7 +2,7 @@
 
 A custom application developed for the Waveshare ESP32-S3 AMOLED Touch watch development board.
 
-## 🛠 Development Environment Setup
+## 🛠 1. Development Environment Setup
 
 ### IDE & Extensions
 1. **Install Cursor or VS Code:** [Cursor.sh](https://cursor.sh/) is recommended for AI-native development.
@@ -36,7 +36,7 @@ Open the `dist\extensions.js` file:
 
 *Note: This ensures the internal PlatformIO scripts recognize the "Cursor" environment as a valid instance of a VS Code-based editor.*
 
-### Step 5: Reload Environment
+#### Step 4: Reload Environment
 1. Close Cursor completely.
 2. Delete the `.pio` folder in your project root to force a clean environment re-index.
 3. Relaunch Cursor and wait for the "PlatformIO: Initializing" status bar message.
