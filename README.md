@@ -4,7 +4,7 @@ A custom application developed for the Waveshare ESP32-S3 AMOLED Touch watch dev
 
 ## 🛠 Development Environment Setup
 
-### A. IDE & Extensions
+### IDE & Extensions
 1. **Install Cursor or VS Code:** [Cursor.sh](https://cursor.sh/) is recommended for AI-native development.
 2. **PlatformIO IDE Extension:**
    - Open Cursor/VS Code.
@@ -12,10 +12,34 @@ A custom application developed for the Waveshare ESP32-S3 AMOLED Touch watch dev
    - Search for `platformio` and install **PlatformIO IDE**.
    - *Note: This may take several minutes to initialize the Python core and compiler toolchains.*
 
-### B. Hardware Drivers (Crucial)
+### Hardware Drivers (Crucial)
 Windows often fails to recognize the ESP32-S3 over USB without the correct VCP (Virtual COM Port) drivers.
 1. Download the **CP210x USB to UART Bridge VCP Drivers** from [Silicon Labs](https://www.silabs.com/developers/usb-to-uart-bridge-vcp-drivers).
 2. Install the driver and restart your machine.
+
+### 🛠️ Cursor-Specific PlatformIO Extension Fix
+
+If the PlatformIO extension fails to load or provide IntelliSense in Cursor, you may need to manually point the `DavidGomes` version to the Cursor binary.
+
+#### Step 1: Locate the Extensions Directory
+Navigate to the following path on your Windows machine:
+`%USERPROFILE%\.cursor\extensions`
+
+#### Step 2: Identify the Extension Folder
+Look for a folder named similar to:
+`davidgomes.platformio-ide-x.x.x` (where x.x.x is the version number).
+
+#### Step 3: Edit the Hard-Coded Application String
+Open the `dist\extensions.js` file:
+- **Search for:** `platformio.platformio-ide`
+- **Replace with:** `DavidGomes.platformio-ide-cursor`
+
+*Note: This ensures the internal PlatformIO scripts recognize the "Cursor" environment as a valid instance of a VS Code-based editor.*
+
+### Step 5: Reload Environment
+1. Close Cursor completely.
+2. Delete the `.pio` folder in your project root to force a clean environment re-index.
+3. Relaunch Cursor and wait for the "PlatformIO: Initializing" status bar message.
 
 ---
 
