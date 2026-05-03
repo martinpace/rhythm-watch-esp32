@@ -44,22 +44,10 @@ void setup() {
     digitalWrite(1, HIGH); delay(200);
 
     // 4. GFX INITIALIZATION
-    if (gfx->begin()) {
-        USBSerial.println("GFX: Driver Handshake Successful.");
-        
-        // 5. THE "WAKE UP" COMMANDS (Writing directly to the bus)
-        // Many OLEDs stay black until they receive 'Sleep Out' and 'Display On'
-        bus->writeCommand(0x11); // Sleep Out
-        delay(120);              // Required delay after sleep out
-        bus->writeCommand(0x29); // Display On
+    gfx->begin();
+    gfx->invertDisplay(true); //inversion couleur
 
-        bus->writeCommand(0x51); // Write Display Brightness
-        bus->write(0xFF);        // Set to MAX (255)
-        
-        // 6. Test Fill
-        gfx->fillScreen(MAGENTA); 
-        USBSerial.println("Action: Display Initialized and Filled.");
-    }
+    gfx->fillScreen(BLACK);
 }
 
 void loop() {
